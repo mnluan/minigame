@@ -1,0 +1,74 @@
+body{
+    padding: 0%;
+    margin: 0%;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
+
+.up, 
+.down, 
+.left, 
+.right{
+    width: 80px;
+    height: 80px;
+}
+
+.up img, 
+.down img, 
+.left img, 
+.right img{
+    width: 80%;
+}
+
+.rightbuttons, .leftbuttons{
+ text-align: center;
+ margin-top: 40px;
+ margin-left: 5px;
+ margin-right: 5px;
+ position: absolute;
+}
+
+.rightbuttons{
+    right: 0;
+}
+
+.leftbuttons{
+    left: 0;
+}
+
+.rightbuttons button, 
+.leftbuttons button {
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(51, 51, 51) );
+    color: white;
+    border-radius: 100%;
+    font-size: 20px;
+    padding: 5px;
+    width: 40px;
+    margin-right: 15px;
+    
+}
+
+.rightbuttons button {
+    margin-top: 50px;
+    
+}
+
+.screen{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: solid 2px;
+    border-radius: 10px;
+    position: absolute;
+}
+

@@ -6,7 +6,7 @@ body{
 .container {
     width: 100vw;
     height: 100vh;
-    background-color: blueviolet;
+    background-color: rgb(47, 11, 56);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -51,24 +51,44 @@ body{
     border-radius: 100%;
     font-size: 20px;
     padding: 5px;
-    width: 40px;
     margin-right: 15px;
     
 }
 
 .rightbuttons button {
     margin-top: 50px;
-    
+    width: 40px;
+}
+
+.leftbuttons button{
+    width: 60px;
+    height: 60px;
+}
+
+
+#right{
+    margin-left: 40px;
 }
 
 .screen{
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 400px;
-    height: 300px;
-    background-color: white;
+    width: 640px;
+    height: 320px;
+    background-color: darkgray;
     border: solid 2px;
     border-radius: 10px;
     position: absolute;
 }
 
+
+.selectgame{
+    color: darkgreen;
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 10px;
+}

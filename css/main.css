@@ -81,7 +81,6 @@ body{
     position: absolute;
 }
 
-
 .selectgame{
     color: darkgreen;
     display: flex;
@@ -91,4 +90,8 @@ body{
     align-items: center;
     font-size: 30px;
     border-radius: 10px;
+}
+
+.radio{
+    display: none;
 }

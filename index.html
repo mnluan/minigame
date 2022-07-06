@@ -8,27 +8,36 @@
     <title>MiniGame</title>
 </head>
 <body>
+
+    <div class="radio">
+        <input type="radio" name="radio-btn" id="radio1" onclick="nextGame()">
+        <input type="radio" name="radio-btn" id="radio2" onclick="nextGame()">
+        <input type="radio" name="radio-btn" id="radio3" onclick="nextGame()">
+        <input type="radio" name="radio-btn" id="radio4" onclick="nextGame()">
+        <input type="radio" name="radio-btn" id="radio5" onclick="nextGame()">
+    </div>
+
     <div class="container">
 
         <div class="screen">
 
             <div class="selectgame">
-                <div class="gamelist">Game 1</div>
-                <div class="gamelist">Game 2</div>
-                <div class="gamelist">Game 3</div>
-                <div class="gamelist">Game 4</div>
-                <div class="gamelist">Game 5</div>
+                <div class="gamelist" id="game1"></div>
+                <div class="gamelist" id="game2"></div>
+                <div class="gamelist" id="game3"></div>
+                <div class="gamelist" id="game4"></div>
+                <div class="gamelist" id="game5"></div>
             </div>
             
         </div>
 
         <div class="leftbuttons">
-            <button id="up" onclick = "alert('Pressed Up')">&#x25B2;</button>
+            <button id="up" onclick = "pressUp()">&#x25B2;</button>
             <div class="horizontal">
                 <button id="left" onclick = "alert('Pressed Left')">&#x25C0;</button>
                 <button id="right" onclick = "alert('Pressed Right')">&#x25BA;</button>
             </div>
-            <button id="down" onclick = "alert('Pressed Down')">&#x25BC;</button>
+            <button id="down" onclick = "pressDown()">&#x25BC;</button>
         </div> 
         
         <div class="rightbuttons">

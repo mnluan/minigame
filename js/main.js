@@ -57,13 +57,9 @@ function pressDown(){
 
 document.addEventListener("keydown", function (e) {
     if ( ( e.code == "ArrowUp" ) && (count >= 2) ) {
-        count--;
-        document.getElementById('radio' + count).checked = true;
-        nextGame();
+        pressUp();
     } else if ( (e.code == "ArrowDown")  && (count <= 4)) {
-        count++;
-        document.getElementById('radio' + count).checked = true;
-        nextGame();
+        pressDown();
     }
 });
 

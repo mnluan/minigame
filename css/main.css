@@ -70,13 +70,17 @@ body{
     margin-left: 40px;
 }
 
+button{
+    opacity: .8;
+}
+
 .screen{
     margin-top: 10px;
     margin-bottom: 10px;
     width: 640px;
     height: 320px;
     background-color: darkgray;
-    border: solid 2px;
+    border: solid 5px;
     border-radius: 10px;
     position: absolute;
 }

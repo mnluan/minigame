@@ -1,4 +1,5 @@
 let count = 1
+let OPTchecked = " ";
 document.getElementById('radio1').checked = true;
 
 function nextGame(){
@@ -10,30 +11,35 @@ function nextGame(){
 
     if(document.getElementById('radio1').checked){
         document.getElementById('game1').innerHTML = '>>> ' + game1 + ' <<<';
+        OPTchecked = game1;
     }else{
         document.getElementById('game1').innerHTML = game1;
     }
 
     if(document.getElementById('radio2').checked){
         document.getElementById('game2').innerHTML = '>>> ' + game2 + ' <<<';
+        OPTchecked = game2
     }else{
         document.getElementById('game2').innerHTML = game2;
     }
 
     if(document.getElementById('radio3').checked){
         document.getElementById('game3').innerHTML = '>>> ' + game3 + ' <<<';
+        OPTchecked = game3
     }else{
         document.getElementById('game3').innerHTML = game3;
     }
 
     if(document.getElementById('radio4').checked){
         document.getElementById('game4').innerHTML = '>>> ' + game4 + ' <<<';
+        OPTchecked = game4
     }else{
         document.getElementById('game4').innerHTML = game4;
     }
 
     if(document.getElementById('radio5').checked){
         document.getElementById('game5').innerHTML = '>>> ' + game5 + ' <<<';
+        OPTchecked = game5
     }else{
         document.getElementById('game5').innerHTML = game5;
     }
@@ -62,5 +68,11 @@ document.addEventListener("keydown", function (e) {
         pressDown();
     }
 });
+
+function pressA(){
+    var url = OPTchecked.toLowerCase();
+    url = url.replace(" ", "_");
+    location.href='./app.html?id=' + url;
+}
 
 nextGame();

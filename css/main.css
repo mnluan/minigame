@@ -83,6 +83,7 @@ button{
     border: solid 5px;
     border-radius: 10px;
     position: absolute;
+    overflow: hidden;
 }
 
 .selectgame{
@@ -99,3 +100,51 @@ button{
 .radio{
     display: none;
 }
+
+/* Game1 */
+.player{
+    background: url("../assets/game1/player.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 150px;
+    width: 175px;
+    height: 150px;
+}
+
+.rival{
+    background: url("../assets/game1/rival.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 150px;
+    width: 175px;
+    height: 150px;
+}
+
+.over, .side, .line, .track{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.over{
+    background-color: green;
+    height: 10%;  
+}
+
+.side{
+    background-color: red;
+    height: 5%;
+}
+
+.line{
+    background-color: white;
+    height: 2%;
+}
+
+.track{
+    background-color: darkgray;
+    height: 67%;
+}
+/* End Game1 */

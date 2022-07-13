@@ -4,7 +4,7 @@ var idgame = params.get('id');
 
 function gameConfig(){
     if (idgame != "" && idgame == "game_1"){
-        document.getElementById('screen').innerHTML = '' + 
+        document.getElementById('board').innerHTML = '' + 
             '<div class="over"></div>' +
             '<div class="line"></div>' +
             '<div class="side"></div>' +
@@ -15,6 +15,19 @@ function gameConfig(){
             '<div class="player"></div>'+
             '<div class="rival"></div>';
     }
+}
+function generate(){
+    var generate = setInterval(()=>{
+        var rival = document.createElement("div");
+        if(isOver == false){
+            rival.classList.add("rival");
+    
+            //generate value between rival position to 100px in top
+            rival.style.top = Math.floor(Math.random()*150) + "px"
+        
+            board.appendChild(rival);
+        }
+    }, 3000);
 }
 
 function moverivalcar(){
@@ -58,4 +71,5 @@ function pressDown(){
 }
 
 gameConfig();
+generate();
 moverivalcar();

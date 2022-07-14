@@ -12,7 +12,7 @@ function gameConfig(){
             '<div class="side"></div>' +
             '<div class="line"></div>' +
             '<div class="over"></div>' +
-            '<div class="player"></div>'+
+            '<div class="player" id="player"></div>'+
             '<div class="rival"></div>';
     }
 }
@@ -51,11 +51,19 @@ function moverivalcar(){
 }
 
 function movecarUp(){
-    
+    var player = document.getElementById("player");
+    var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
+    if(top > -20){
+        player.style.top = top - 10 + "px";
+    }
 }
 
 function movecarDown(){
-    
+    var player = document.getElementById("player");
+    var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
+    if(top <= 160){
+        player.style.top = top + 10 + "px";
+    }
 }
 
 function pressUp(){
@@ -69,6 +77,16 @@ function pressDown(){
         movecarDown();
     }
 }
+
+//Keyboard buttons
+window.addEventListener("keydown", (e) => {
+    if (e.key == "ArrowUp") {
+        pressUp();
+    }
+    else if (e.key == "ArrowDown") {
+        pressDown();
+    }
+});
 
 gameConfig();
 generate();

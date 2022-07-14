@@ -1,5 +1,6 @@
 let params = new URLSearchParams(location.search);
 let isOver = false;
+let score = 0;
 var idgame = params.get('id');
 
 function gameConfig(){
@@ -12,9 +13,12 @@ function gameConfig(){
             '<div class="side"></div>' +
             '<div class="line"></div>' +
             '<div class="over"></div>' +
+            '<div id="score"></div>'+
+            '<div id="hscore"></div>'+
             '<div class="player" id="player"></div>'+
             '<div class="rival"></div>';
     }
+    document.getElementById("score").innerHTML = `Score: ${score}`;
 }
 function generate(){
     var generate = setInterval(()=>{
@@ -42,7 +46,8 @@ function moverivalcar(){
                 );
                 if (enemyLeft < -210){
                     enemy.parentElement.removeChild(enemy); 
-                    //score++;
+                    score++;
+                    document.getElementById("score").innerHTML = `Score: ${score}`;
                 }
                 enemy.style.left = enemyLeft + -20 + "px"
             }

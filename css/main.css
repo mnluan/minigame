@@ -86,6 +86,13 @@ button{
     overflow: hidden;
 }
 
+#score, #hscore{
+    color: white;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    position: absolute;
+}
 .selectgame{
     color: darkgreen;
     display: flex;

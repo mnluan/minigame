@@ -3,6 +3,7 @@ let isOver = false;
 let score = 0;
 var idgame = params.get('id');
 
+//function to show games by id
 function gameConfig(){
     if (idgame != "" && idgame == "game_1"){
         document.getElementById('board').innerHTML = '' + 
@@ -20,6 +21,8 @@ function gameConfig(){
     }
     document.getElementById("score").innerHTML = `Score: ${score}`;
 }
+
+//Game 1: function to generate foe cars
 function generate(){
     var generate = setInterval(()=>{
         var rival = document.createElement("div");
@@ -34,6 +37,7 @@ function generate(){
     }, 3000);
 }
 
+//Game 1: function to move foe cars
 function moverivalcar(){
     var moveEnemies = setInterval(()=>{
         var enemies = document.getElementsByClassName("rival");
@@ -55,6 +59,7 @@ function moverivalcar(){
     }, 200);
 }
 
+//Game 1: function to move up player car
 function movecarUp(){
     var player = document.getElementById("player");
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
@@ -63,6 +68,7 @@ function movecarUp(){
     }
 }
 
+//Game 1: function to move down player car
 function movecarDown(){
     var player = document.getElementById("player");
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
@@ -71,12 +77,14 @@ function movecarDown(){
     }
 }
 
+//Button Up actions
 function pressUp(){
     if (idgame != "" && idgame == "game_1"){
         movecarUp();
     }
 }
 
+//Button Down actions
 function pressDown(){
     if (idgame != "" && idgame == "game_1"){
         movecarDown();

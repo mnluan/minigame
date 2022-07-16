@@ -17,7 +17,7 @@ function gameConfig(){
             '<div id="score"></div>'+
             '<div id="hscore"></div>'+
             '<div class="player" id="player"></div>'+
-            '<div class="rival"></div>';
+            '<div class="rival" id="rival"></div>';
     }
     document.getElementById("score").innerHTML = `Score: ${score}`;
 }
@@ -53,7 +53,22 @@ function moverivalcar(){
                     score++;
                     document.getElementById("score").innerHTML = `Score: ${score}`;
                 }
-                enemy.style.left = enemyLeft + -20 + "px"
+                enemy.style.left = enemyLeft + -20 + "px";
+
+                //check if the car hits others
+                var enemybound = enemy.getBoundingClientRect();
+                var playerbound = player.getBoundingClientRect();
+                var playertop = (playerbound.top + 60);
+                var playerbottom = (playerbound.bottom - 60);
+                //Condition to check whether the player's car and the other car are at the same position
+                if  ( 
+                        ((playerbound.right >= enemybound.left) && (playerbound.left <= enemybound.right)) &&
+                        ((playertop >= enemybound.top) && (playerbottom <= enemybound.bottom))
+                    )
+                    {
+                        console.log("hit!");
+                    }
+
             }
         }
     }, 200);

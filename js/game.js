@@ -66,7 +66,9 @@ function moverivalcar(){
                         ((playertop >= enemybound.top) && (playerbottom <= enemybound.bottom))
                     )
                     {
-                        console.log("hit!");
+                        //Game 1 - GameOver
+                        clearInterval(moveEnemies);
+                        gameOver.style.display = "block";
                     }
 
             }

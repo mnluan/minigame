@@ -68,7 +68,7 @@ function moverivalcar(){
                     )
                     {
                         //Game 1 - GameOver
-                        isOver == true;
+                        isOver = true;
                         clearInterval(moveEnemies);
                         gameOver.style.display = "block";
                     }
@@ -110,6 +110,14 @@ function pressDown(){
     }
 }
 
+//Button A actions
+function pressA(){
+    if (idgame == "game_1" && isOver == true){
+        //restart game
+        window.location.reload();
+    }
+}
+
 //Keyboard buttons
 window.addEventListener("keydown", (e) => {
     if (e.key == "ArrowUp") {
@@ -117,6 +125,10 @@ window.addEventListener("keydown", (e) => {
     }
     else if (e.key == "ArrowDown") {
         pressDown();
+    }
+    if((e.code == "Space" || e.key == " ") && isOver == true){
+        //restart game
+        window.location.reload();
     }
 });
 

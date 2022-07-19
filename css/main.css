@@ -87,7 +87,7 @@ button{
 }
 
 #gameOver{
-    display: block;
+    display: none;
     position: absolute;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     color: black;

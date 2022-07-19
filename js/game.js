@@ -6,7 +6,7 @@ var idgame = params.get('id');
 //function to show games by id
 function gameConfig(){
     if (idgame != "" && idgame == "game_1"){
-        document.getElementById('board').innerHTML = '' + 
+        document.getElementById('board').innerHTML = '' +
             '<div class="over"></div>' +
             '<div class="line"></div>' +
             '<div class="side"></div>' +
@@ -17,7 +17,8 @@ function gameConfig(){
             '<div id="score"></div>'+
             '<div id="hscore"></div>'+
             '<div class="player" id="player"></div>'+
-            '<div class="rival" id="rival"></div>';
+            '<div class="rival" id="rival"></div>'+
+            '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
     }
     document.getElementById("score").innerHTML = `Score: ${score}`;
 }
@@ -67,6 +68,7 @@ function moverivalcar(){
                     )
                     {
                         //Game 1 - GameOver
+                        isOver == true;
                         clearInterval(moveEnemies);
                         gameOver.style.display = "block";
                     }

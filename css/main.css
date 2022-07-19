@@ -86,6 +86,29 @@ button{
     overflow: hidden;
 }
 
+#gameOver{
+    display: block;
+    position: absolute;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: 10px;
+    width: 300px;
+    height: 290px;
+    text-align: center;
+    top: 20px;
+    left: 180px;
+    z-index: 3;
+}
+
+#gameOver #title{
+    font-size: 70px;
+}
+
+#gameOver p{
+    font-size: 20px;
+}
+
 #score, #hscore{
     color: white;
     top: 0;

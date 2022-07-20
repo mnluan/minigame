@@ -25,8 +25,11 @@ function gameConfig(){
 
     if(idgame == "game_2"){
         document.getElementById('board').innerHTML ='<div id="score"></div>'+
-        '<div class="player" id="player"></div>';
+        '<div class="player" id="player"></div>'+
+        '<div class="asteroid" id="asteroid"></div>'+
+        '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
 
+        asteroid.style.background = "url('./assets/game2/rival.gif') no-repeat"
         player.style.background = "url('./assets/game2/player.gif') no-repeat";
         board.style.background = "url('./assets/game2/background.png')";
     }
@@ -51,7 +54,7 @@ function generate(){
     }
 }
 
-//Game 1: function to move foe cars
+//Game 1: function to move enemy cars
 function moverivalcar(){
     var moveEnemies = setInterval(()=>{
         var enemies = document.getElementsByClassName("rival");
@@ -91,7 +94,7 @@ function moverivalcar(){
     }, 200);
 }
 
-//Game 1: function to move up player's car
+//Games 1 - 2: function to move up player's car/ship
 function movecarUp(){
     var player = document.getElementById("player");
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
@@ -100,7 +103,7 @@ function movecarUp(){
     }
 }
 
-//Game 1: function to move down player's car
+//Games 1 - 2: function to move down player's car/ship
 function movecarDown(){
     var player = document.getElementById("player");
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
@@ -118,7 +121,7 @@ function moveshipUp(){
     }
 }
 
-//Game 1: function to move down player's car
+//Game 2: function to move down player's ship
 function moveshipDown(){
     var player = document.getElementById("player");
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
@@ -127,6 +130,7 @@ function moveshipDown(){
     }
 }
 
+//Game 2: function to move Right player's ship
 function moveshipRight(){
     var player = document.getElementById("player");
     var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
@@ -135,12 +139,34 @@ function moveshipRight(){
     }
 }
 
+//Game 2: function to move left player's ship
 function moveshipLeft(){
     var player = document.getElementById("player");
     var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
     if(left > 0){
         player.style.left = left - 10 + "px";
     }
+}
+
+//Game 2: function to drop down asteroid from sky
+function moveAsteroid(){
+    var moveEnemies = setInterval(()=>{
+        var enemies = document.getElementsByClassName("asteroid");
+    
+        if(enemies != undefined){
+            for (var i = 0; i < enemies.length; i++){
+                var enemy = enemies[i]; //getting each enemies
+                var enemyTop = parseInt(
+                    window.getComputedStyle(enemy).getPropertyValue("top")
+                );
+                if (enemyTop > 220){
+                    enemy.parentElement.removeChild(enemy); 
+                    //GameOver
+                }
+                enemy.style.top = enemyTop + 20 + "px";
+            }
+        }
+    }, 500);
 }
 
 //Button Up actions
@@ -214,3 +240,4 @@ window.addEventListener("keydown", (e) => {
 gameConfig();
 generate();
 moverivalcar();
+moveAsteroid();

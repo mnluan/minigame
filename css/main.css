@@ -176,3 +176,13 @@ button{
     height: 67%;
 }
 /* End Game1 */
+
+/*Game2*/
+.asteroid{
+    width: 80px;
+    height: 266px;
+    right: 30px;
+    top:-280px;
+    position:absolute;
+}
+/*End Game2*/

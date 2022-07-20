@@ -127,6 +127,22 @@ function moveshipDown(){
     }
 }
 
+function moveshipRight(){
+    var player = document.getElementById("player");
+    var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
+    if(left <= 480){
+        player.style.left = left + 10 + "px";
+    }
+}
+
+function moveshipLeft(){
+    var player = document.getElementById("player");
+    var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
+    if(left > 0){
+        player.style.left = left - 10 + "px";
+    }
+}
+
 //Button Up actions
 function pressUp(){
     if (idgame == "game_1"){
@@ -149,6 +165,20 @@ function pressDown(){
     }
 }
 
+//Button Left actions
+function pressLeft(){
+    if (idgame == "game_2"){
+        moveshipLeft();
+    }
+}
+
+//Button Right actions
+function pressRight(){
+    if (idgame == "game_2"){
+        moveshipRight();
+    }
+}
+
 //Button A actions
 function pressA(){
     if (idgame == "game_1" && isOver == true){
@@ -159,13 +189,22 @@ function pressA(){
 
 //Keyboard buttons
 window.addEventListener("keydown", (e) => {
-    //Up Down
+    //Up - Down
     if (e.key == "ArrowUp") {
         pressUp();
     }
     else if (e.key == "ArrowDown") {
         pressDown();
     }
+
+    // Left - Right
+    if (e.key == "ArrowLeft") {
+        pressLeft();
+    }
+    else if (e.key == "ArrowRight") {
+        pressRight();
+    }
+    
     if((e.code == "Space" || e.key == " ") && isOver == true){
         //restart game
         window.location.reload();

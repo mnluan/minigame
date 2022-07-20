@@ -172,43 +172,43 @@ function moveAsteroid(){
 
 //Button Up actions
 function pressUp(){
-    if (idgame == "game_1"){
+    if (idgame == "game_1" && isOver == false){
         movecarUp();
     }
 
-    if (idgame == "game_2"){
+    if (idgame == "game_2" && isOver == false){
         moveshipUp();
     }
 }
 
 //Button Down actions
 function pressDown(){
-    if (idgame == "game_1"){
+    if (idgame == "game_1" && isOver == false){
         movecarDown();
     }
 
-    if (idgame == "game_2"){
+    if (idgame == "game_2" && isOver == false){
         moveshipDown();
     }
 }
 
 //Button Left actions
 function pressLeft(){
-    if (idgame == "game_2"){
+    if (idgame == "game_2" && isOver == false){
         moveshipLeft();
     }
 }
 
 //Button Right actions
 function pressRight(){
-    if (idgame == "game_2"){
+    if (idgame == "game_2" && isOver == false){
         moveshipRight();
     }
 }
 
 //Button A actions
 function pressA(){
-    if (idgame == "game_1" && isOver == true){
+    if ((idgame == "game_1" || "game_2") && isOver == true){
         //restart game
         window.location.reload();
     }

@@ -5,7 +5,7 @@ var idgame = params.get('id');
 
 //function to show games by id
 function gameConfig(){
-    if (idgame != "" && idgame == "game_1"){
+    if (idgame == "game_1"){
         document.getElementById('board').innerHTML = '' +
             '<div class="over"></div>' +
             '<div class="line"></div>' +
@@ -19,23 +19,28 @@ function gameConfig(){
             '<div class="player" id="player"></div>'+
             '<div class="rival" id="rival"></div>'+
             '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
+
+            player.style.background = "url('./assets/game1/player.png')";
+            rival.style.background = "url('./assets/game1/rival.png')";
     }
     document.getElementById("score").innerHTML = `Score: ${score}`;
 }
 
 //Game 1: function to generate foe cars
 function generate(){
-    var generate = setInterval(()=>{
-        var rival = document.createElement("div");
-        if(isOver == false){
-            rival.classList.add("rival");
-    
-            //generate value between rival position to 100px in top
-            rival.style.top = Math.floor(Math.random()*150) + "px"
+    if (idgame == "game_1"){
+        var generate = setInterval(()=>{
+            var rival = document.createElement("div");
+            if(isOver == false){
+                rival.classList.add("rival");
         
-            board.appendChild(rival);
-        }
-    }, 3000);
+                //generate value between rival position to 100px in top
+                rival.style.top = Math.floor(Math.random()*150) + "px"
+                board.appendChild(rival);
+                rival.style.background = "url('./assets/game1/rival.png')";
+            }
+        }, 4000);
+    }
 }
 
 //Game 1: function to move foe cars
@@ -98,14 +103,14 @@ function movecarDown(){
 
 //Button Up actions
 function pressUp(){
-    if (idgame != "" && idgame == "game_1"){
+    if (idgame == "game_1"){
         movecarUp();
     }
 }
 
 //Button Down actions
 function pressDown(){
-    if (idgame != "" && idgame == "game_1"){
+    if (idgame == "game_1"){
         movecarDown();
     }
 }

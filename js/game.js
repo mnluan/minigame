@@ -91,7 +91,7 @@ function moverivalcar(){
     }, 200);
 }
 
-//Game 1: function to move up player car
+//Game 1: function to move up player's car
 function movecarUp(){
     var player = document.getElementById("player");
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
@@ -100,8 +100,26 @@ function movecarUp(){
     }
 }
 
-//Game 1: function to move down player car
+//Game 1: function to move down player's car
 function movecarDown(){
+    var player = document.getElementById("player");
+    var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
+    if(top <= 160){
+        player.style.top = top + 10 + "px";
+    }
+}
+
+//Game 2: function to move up player's ship
+function moveshipUp(){
+    var player = document.getElementById("player");
+    var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
+    if(top > 0){
+        player.style.top = top - 10 + "px";
+    }
+}
+
+//Game 1: function to move down player's car
+function moveshipDown(){
     var player = document.getElementById("player");
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
     if(top <= 160){
@@ -114,12 +132,20 @@ function pressUp(){
     if (idgame == "game_1"){
         movecarUp();
     }
+
+    if (idgame == "game_2"){
+        moveshipUp();
+    }
 }
 
 //Button Down actions
 function pressDown(){
     if (idgame == "game_1"){
         movecarDown();
+    }
+
+    if (idgame == "game_2"){
+        moveshipDown();
     }
 }
 
@@ -133,6 +159,7 @@ function pressA(){
 
 //Keyboard buttons
 window.addEventListener("keydown", (e) => {
+    //Up Down
     if (e.key == "ArrowUp") {
         pressUp();
     }

@@ -15,7 +15,6 @@ function gameConfig(){
             '<div class="line"></div>' +
             '<div class="over"></div>' +
             '<div id="score"></div>'+
-            '<div id="hscore"></div>'+
             '<div class="player" id="player"></div>'+
             '<div class="rival" id="rival"></div>'+
             '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
@@ -23,6 +22,15 @@ function gameConfig(){
             player.style.background = "url('./assets/game1/player.png')";
             rival.style.background = "url('./assets/game1/rival.png')";
     }
+
+    if(idgame == "game_2"){
+        document.getElementById('board').innerHTML ='<div id="score"></div>'+
+        '<div class="player" id="player"></div>';
+
+        player.style.background = "url('./assets/game2/player.gif') no-repeat";
+        board.style.background = "url('./assets/game2/background.png')";
+    }
+    
     document.getElementById("score").innerHTML = `Score: ${score}`;
 }
 

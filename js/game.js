@@ -83,7 +83,6 @@ function moverivalcar(){
                         ((playertop >= enemybound.top) && (playerbottom <= enemybound.bottom))
                     )
                     {
-                        //Game 1 - GameOver
                         isOver = true;
                         clearInterval(moveEnemies);
                         gameOver.style.display = "block";
@@ -161,7 +160,9 @@ function moveAsteroid(){
                 );
                 if (enemyTop > 220){
                     enemy.parentElement.removeChild(enemy); 
-                    //GameOver
+                    isOver = true;
+                    clearInterval(moveEnemies);
+                    gameOver.style.display = "block";
                 }
                 enemy.style.top = enemyTop + 20 + "px";
             }

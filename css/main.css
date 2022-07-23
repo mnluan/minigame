@@ -185,4 +185,14 @@ button{
     top:-280px;
     position:absolute;
 }
+
+.bullets{
+    position: absolute;
+    width: 82px;
+    height: 20px;
+    background: url('../assets/game2/bullet.png');
+    opacity: .7;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 /*End Game2*/

@@ -45,7 +45,6 @@ function generate(){
             if(isOver == false){
                 rival.classList.add("rival");
         
-                //generate value between rival position to 100px in top
                 rival.style.top = Math.floor(Math.random()*150) + "px"
                 board.appendChild(rival);
                 rival.style.background = "url('./assets/game1/rival.png')";
@@ -53,6 +52,25 @@ function generate(){
         }, 4000);
     }
 }
+
+//Game 2: function to generate asteroids
+function generateRocks(){
+    if(idgame == "game_2"){
+        var generaterocks = setInterval(() => {
+            var rock = document.createElement("div");
+            rock.classList.add("asteroid");
+            //Just getting the left of the rock to place it in random position...
+            var rockleft = parseInt(
+              window.getComputedStyle(rock).getPropertyValue("left")
+            );
+        
+            rock.style.left = Math.floor(Math.random() * 450) + "px";
+            board.appendChild(rock);
+            rock.style.background = "url('./assets/game2/rival.gif')";
+          }, 1000);
+    }
+}
+
 
 //Game 1: function to move enemy cars
 function moverivalcar(){
@@ -124,7 +142,7 @@ function moveshipUp(){
 function moveshipDown(){
     var player = document.getElementById("player");
     var top = parseInt(window.getComputedStyle(player).getPropertyValue("top"));
-    if(top <= 160){
+    if(top <= 230){
         player.style.top = top + 10 + "px";
     }
 }
@@ -214,6 +232,12 @@ function pressA(){
     }
 }
 
+function pressB(){
+    if ((idgame == "game_2") && isOver == false){
+        shoot();
+    }   
+}
+
 //Keyboard buttons
 window.addEventListener("keydown", (e) => {
     //Up - Down
@@ -239,6 +263,9 @@ window.addEventListener("keydown", (e) => {
 });
 
 gameConfig();
+
 generate();
+generateRocks();
+
 moverivalcar();
 moveAsteroid();

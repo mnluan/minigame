@@ -188,6 +188,7 @@ button{
 
 .bullets{
     position: absolute;
+    bottom: 50px;
     width: 82px;
     height: 20px;
     background: url('../assets/game2/bullet.png');

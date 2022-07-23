@@ -151,7 +151,7 @@ function moveshipDown(){
 function moveshipRight(){
     var player = document.getElementById("player");
     var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
-    if(left <= 480){
+    if(left <= 530){
         player.style.left = left + 10 + "px";
     }
 }
@@ -186,6 +186,45 @@ function moveAsteroid(){
             }
         }
     }, 500);
+}
+
+function shoot(){
+    var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
+    var bullet = document.createElement("div");
+    bullet.classList.add("bullets");
+    board.appendChild(bullet);
+
+    var movebullet = setInterval(() => {
+        var rocks =  document.getElementsByClassName("asteroid");
+  
+        for (var i = 0; i < rocks.length; i++) {
+          var rock = rocks[i];
+          if (rock != undefined) {
+            var rockbound = rock.getBoundingClientRect();
+            var bulletbound = bullet.getBoundingClientRect();
+            console.log("left = " + bulletbound.left + "Down = " + bulletbound.bottom);
+            //Condition to check whether the player's car and the other car are at the same position
+            if  ( 
+                    (bulletbound.left >= rockbound.left) && (bulletbound.top <= rockbound.top)
+                )
+                {
+                    console.log("Hit");
+                    rock.parentElement.removeChild(rock); //Just removing that particular rock;
+                }
+          }
+        }
+        var bulletbottom = parseInt(
+          window.getComputedStyle(bullet).getPropertyValue("bottom")
+        );
+  
+        //Stops the bullet from moving outside the gamebox
+        if (bulletbottom >= 400) {
+          clearInterval(movebullet);
+        }
+        bullet.style.left = left + "px"; //bullet should always be placed at the top of my jet..!
+        bullet.style.bottom = bulletbottom + 3 + "px";
+      });
+
 }
 
 //Button Up actions
@@ -256,6 +295,16 @@ window.addEventListener("keydown", (e) => {
         pressRight();
     }
     
+    //A button -> Z in keyboard
+    if( e.key == "z" || e.key == "Z"){
+        pressA();
+    }
+
+    //B button -> X in keyboard
+    if( e.key == "x" || e.key == "X"){
+        pressB();
+    }
+
     if((e.code == "Space" || e.key == " ") && isOver == true){
         //restart game
         window.location.reload();

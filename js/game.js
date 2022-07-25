@@ -276,6 +276,10 @@ function pressB(){
     }   
 }
 
+function pressStart(){
+    location.href='./index.html';
+}
+
 //Keyboard buttons
 window.addEventListener("keydown", (e) => {
     //Up - Down

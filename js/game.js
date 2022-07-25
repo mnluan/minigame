@@ -36,11 +36,14 @@ function gameConfig(){
 
     if(idgame == "game_3"){
         document.getElementById('board').innerHTML ='<div id="score"></div>'+
-        '<div class="player" id="player"></div>'+
+        '<div class="sea"></div>' +
+        '<div class="wave" id="wave"></div>'+
+        '<div class="surfer" id="surfer"></div>'+
         '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
-
-        player.style.background = "url('./assets/game3/player.png') no-repeat";
-        board.style.background = "url('./assets/game3/wave.gif') no-repeat";
+        
+        wave.style.background = "url('./assets/game3/wave.gif') no-repeat";
+        surfer.style.background = "url('./assets/game3/player.png') no-repeat";
+        board.style.background = "orange";
     }
     
     document.getElementById("score").innerHTML = `Score: ${score}`;

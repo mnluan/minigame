@@ -223,6 +223,19 @@ button{
     top: 180px;
     width: 175px;
     height: 150px;
+    animation: moving 500ms infinite;
+}
+
+@keyframes moving{
+    0% {
+        transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(5px);
+    }
+    100% { 
+        transform: translateY(0px);
+    }
 }
 
 /* End Game3*/

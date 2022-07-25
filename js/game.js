@@ -202,15 +202,11 @@ function shoot(){
           if (rock != undefined) {
             var rockbound = rock.getBoundingClientRect();
             var bulletbound = bullet.getBoundingClientRect();
-            console.log("left = " + bulletbound.left + "Down = " + bulletbound.bottom);
             //Condition to check whether the player's car and the other car are at the same position
-            if  ( 
-                    (bulletbound.left >= rockbound.left) && (bulletbound.top <= rockbound.top)
-                )
-                {
-                    console.log("Hit");
-                    rock.parentElement.removeChild(rock); //Just removing that particular rock;
-                }
+            if( (bulletbound.top >= rockbound.bottom) && (bulletbound.left >= rockbound.left) && (rockbound.right >= (bulletbound.left + 50)) ) {
+                rock.parentElement.removeChild(rock); //Just removing that particular rock;
+                //Score Here!
+            }
           }
         }
         var bulletbottom = parseInt(

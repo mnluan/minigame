@@ -29,9 +29,18 @@ function gameConfig(){
         '<div class="asteroid" id="asteroid"></div>'+
         '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
 
-        asteroid.style.background = "url('./assets/game2/rival.gif') no-repeat"
+        asteroid.style.background = "url('./assets/game2/rival.gif') no-repeat";
         player.style.background = "url('./assets/game2/player.gif') no-repeat";
         board.style.background = "url('./assets/game2/background.png')";
+    }
+
+    if(idgame == "game_3"){
+        document.getElementById('board').innerHTML ='<div id="score"></div>'+
+        '<div class="player" id="player"></div>'+
+        '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
+
+        player.style.background = "url('./assets/game3/player.png') no-repeat";
+        board.style.background = "url('./assets/game3/wave.gif') no-repeat";
     }
     
     document.getElementById("score").innerHTML = `Score: ${score}`;
@@ -270,12 +279,14 @@ function pressA(){
     }
 }
 
+//Button B actions
 function pressB(){
     if ((idgame == "game_2") && isOver == false){
         shoot();
     }   
 }
 
+//Button Start actions
 function pressStart(){
     location.href='./index.html';
 }

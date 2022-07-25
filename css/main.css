@@ -115,6 +115,7 @@ button{
     left: 0;
     padding: 5px;
     position: absolute;
+    z-index: 10;
 }
 .selectgame{
     color: darkgreen;

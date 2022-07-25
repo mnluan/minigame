@@ -205,7 +205,10 @@ function shoot(){
             //Condition to check whether the player's car and the other car are at the same position
             if( (bulletbound.top >= rockbound.bottom) && (bulletbound.left >= rockbound.left) && (rockbound.right >= (bulletbound.left + 50)) ) {
                 rock.parentElement.removeChild(rock); //Just removing that particular rock;
+                
                 //Score Here!
+                score++;
+                document.getElementById("score").innerHTML = `Score: ${score}`;
             }
           }
         }

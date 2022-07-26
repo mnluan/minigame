@@ -86,6 +86,11 @@ button{
     overflow: hidden;
 }
 
+.board h2, .board p{
+    color: darkgreen;
+    margin-left: 5px;
+}
+
 #gameOver{
     display: none;
     position: absolute;

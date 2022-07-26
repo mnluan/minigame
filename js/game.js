@@ -47,6 +47,19 @@ function gameConfig(){
         shark.style.background = "url('./assets/game3/shark.png') no-repeat";
         board.style.background = "orange";
     }
+
+    if(idgame == "how_to_play"){
+        document.getElementById('board').innerHTML=''+
+        '<h2>Game 1:</h2>'+
+        '<p>To move the car, use the ArrowUp or ArrowDown [Buttons | Keyboard]</p>'+
+        '<h2>Game 2:</h2>'+
+        '<p>To move the starship, use the Up, Down, Left or Right Arrows [Buttons | Keyboard]</p>'+
+        '<p>To attack the asteroids, press B [Button] or Z [Keyboard]</p>'+
+        '<h2>Game 3:</h2>'+
+        '<p>To avoid the sharks, press A, B or ArrowUp [Buttons]<br>Or Space / ArrowUp [Keyboard]</p>'+
+        '';
+        document.getElementById('leftbuttons').innerHTML='';
+    }
     
     document.getElementById("score").innerHTML = `Score: ${score}`;
 }

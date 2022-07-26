@@ -6,8 +6,8 @@ function nextGame(){
     var game1 = "Game 1";
     var game2 = "Game 2";
     var game3 = "Game 3";
-    var game4 = "Game 4";
-    var game5 = "Game 5";
+    var game4 = "How to play";
+    var game5 = "About";
 
     if(document.getElementById('radio1').checked){
         document.getElementById('game1').innerHTML = '>>> ' + game1 + ' <<<';
@@ -71,7 +71,7 @@ document.addEventListener("keydown", function (e) {
 
 function pressA(){
     var url = OPTchecked.toLowerCase();
-    url = url.replace(" ", "_");
+    url = url.replace(/\s/g, '_');
     location.href='./app.html?id=' + url;
 }
 

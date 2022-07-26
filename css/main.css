@@ -89,6 +89,17 @@ button{
 .board h2, .board p{
     color: darkgreen;
     margin-left: 5px;
+    font-size: large;
+}
+
+#about{
+    margin-top: 10%;
+    text-align: center;
+    font-size: larger;
+}
+
+#about a:visited{
+    color: darkgreen;
 }
 
 #gameOver{

@@ -53,11 +53,20 @@ function gameConfig(){
         '<h2>Game 1:</h2>'+
         '<p>To move the car, use the ArrowUp or ArrowDown [Buttons | Keyboard]</p>'+
         '<h2>Game 2:</h2>'+
-        '<p>To move the starship, use the Up, Down, Left or Right Arrows [Buttons | Keyboard]</p>'+
-        '<p>To attack the asteroids, press B [Button] or X [Keyboard]</p>'+
+        '<p>To move the starship, use the Up, Down, Left or Right Arrows [Buttons | Keyboard] <br>To attack the asteroids, press B [Button] or X [Keyboard]</p>'+
         '<h2>Game 3:</h2>'+
         '<p>To avoid the sharks, press A, B or ArrowUp [Buttons]<br>Or Space / ArrowUp [Keyboard]</p>'+
         '';
+        document.getElementById('leftbuttons').innerHTML='';
+    }
+
+    if(idgame == "about"){
+        document.getElementById('board').innerHTML='<div id="about">'+
+        '<p>This project was developed by: </p>'+
+        '<h2> Luan Moraes do Nascimento </h2>'+
+        '<p>GitHub: <a href="https://github.com/mnluan" target="_blank">github.com/mnluan</a> </p>'+
+        '<p>LinkedIn: <a href="https://www.linkedin.com/in/mnluan/" target="_blank">linkedin.com/in/mnluan</a> </p>'+
+        '</div>';
         document.getElementById('leftbuttons').innerHTML='';
     }
     
@@ -94,7 +103,7 @@ function generateRocks(){
             rock.style.left = Math.floor(Math.random() * 450) + "px";
             board.appendChild(rock);
             rock.style.background = "url('./assets/game2/rival.gif')";
-          }, 1000);
+          }, 1300);
     }
 }
 

@@ -52,7 +52,7 @@ function gameConfig(){
 }
 
 //Game 1: function to generate foe cars
-function generate(){
+function generateCars(){
     if (idgame == "game_1"){
         var generate = setInterval(()=>{
             var rival = document.createElement("div");
@@ -283,6 +283,20 @@ function moveShark(){
     }, 200);
 }
 
+//Game 3: function to generate sharks
+function generateSharks(){
+    if (idgame == "game_3"){
+        var generate = setInterval(()=>{
+            var rival = document.createElement("div");
+            if(isOver == false){
+                rival.classList.add("shark");
+                board.appendChild(rival);
+                rival.style.background = "url('./assets/game3/shark.png') no-repeat";
+            }
+        }, 4000);
+    }
+}
+
 //Button Up actions
 function pressUp(){
     if (idgame == "game_1" && isOver == false){
@@ -375,8 +389,9 @@ window.addEventListener("keydown", (e) => {
 
 gameConfig();
 
-generate();
+generateCars();
 generateRocks();
+generateSharks();
 
 moverivalcar();
 moveAsteroid();

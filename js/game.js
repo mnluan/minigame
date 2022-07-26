@@ -54,7 +54,7 @@ function gameConfig(){
         '<p>To move the car, use the ArrowUp or ArrowDown [Buttons | Keyboard]</p>'+
         '<h2>Game 2:</h2>'+
         '<p>To move the starship, use the Up, Down, Left or Right Arrows [Buttons | Keyboard]</p>'+
-        '<p>To attack the asteroids, press B [Button] or Z [Keyboard]</p>'+
+        '<p>To attack the asteroids, press B [Button] or X [Keyboard]</p>'+
         '<h2>Game 3:</h2>'+
         '<p>To avoid the sharks, press A, B or ArrowUp [Buttons]<br>Or Space / ArrowUp [Keyboard]</p>'+
         '';

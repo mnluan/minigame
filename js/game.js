@@ -272,7 +272,7 @@ function moveShark(){
                     {
                         isOver = true;
                         clearInterval(moveEnemies);
-                        shark.style.background = "none";
+                        enemy.style.background = "none";
                         surfer.style.background = "url('./assets/game3/shark_GO.png') no-repeat";
                         gameOver.style.background = "rgba(255, 255, 255, .5)"
                         gameOver.style.display = "block";
@@ -297,6 +297,21 @@ function generateSharks(){
     }
 }
 
+//Game 3: function to jump
+function jump(){
+    if(idgame == "game_3" && isOver == false){
+        if (surfer.classList != "jumpActive") {
+            surfer.classList.add("jumpActive");
+    
+            // Impede de pular apos 0.5 segundos
+            setTimeout(() => {
+                surfer.classList.remove("jumpActive");
+            }, 2200);
+        }
+    }
+}
+
+
 //Button Up actions
 function pressUp(){
     if (idgame == "game_1" && isOver == false){
@@ -306,6 +321,8 @@ function pressUp(){
     if (idgame == "game_2" && isOver == false){
         moveshipUp();
     }
+
+    jump();
 }
 
 //Button Down actions
@@ -339,13 +356,17 @@ function pressA(){
         //restart game
         window.location.reload();
     }
+
+    jump();
 }
 
 //Button B actions
 function pressB(){
     if ((idgame == "game_2") && isOver == false){
         shoot();
-    }   
+    }  
+    
+    jump();
 }
 
 //Button Start actions
@@ -358,6 +379,7 @@ window.addEventListener("keydown", (e) => {
     //Up - Down
     if (e.key == "ArrowUp") {
         pressUp();
+        jump();
     }
     else if (e.key == "ArrowDown") {
         pressDown();
@@ -379,6 +401,10 @@ window.addEventListener("keydown", (e) => {
     //B button -> X in keyboard
     if( e.key == "x" || e.key == "X"){
         pressB();
+    }
+
+    if((e.code == "Space" || e.key == " ") && isOver == false){
+        jump();
     }
 
     if((e.code == "Space" || e.key == " ") && isOver == true){

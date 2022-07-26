@@ -246,4 +246,21 @@ button{
     bottom: 20px;
 }
 
+.jumpActive {
+    animation: jump 0.5s linear infinite;
+}
+
+@keyframes jump {
+
+    0%,
+    100% {
+        transform: translateY(-120px);
+    }
+
+    45%,
+    55% {
+        transform: translateY(-90px);
+    }
+}
+
 /* End Game3*/

@@ -39,10 +39,12 @@ function gameConfig(){
         '<div class="sea"></div>' +
         '<div class="wave" id="wave"></div>'+
         '<div class="surfer" id="surfer"></div>'+
+        '<div class="shark" id="shark"></div>'+
         '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
         
         wave.style.background = "url('./assets/game3/wave.gif') no-repeat";
         surfer.style.background = "url('./assets/game3/player.png') no-repeat";
+        shark.style.background = "url('./assets/game3/shark.png') no-repeat";
         board.style.background = "orange";
     }
     
@@ -200,6 +202,7 @@ function moveAsteroid(){
     }, 500);
 }
 
+//Game2: function to destroy asteroids
 function shoot(){
     var left = parseInt(window.getComputedStyle(player).getPropertyValue("left"));
     var bullet = document.createElement("div");
@@ -236,6 +239,48 @@ function shoot(){
         bullet.style.bottom = bulletbottom + 3 + "px";
       });
 
+}
+
+//Game3 Function to move shark
+function moveShark(){
+    var moveEnemies = setInterval(()=>{
+        var enemies = document.getElementsByClassName("shark");
+    
+        if(enemies != undefined){
+            for (var i = 0; i < enemies.length; i++){
+                var enemy = enemies[i]; //getting each enemies
+                var enemyLeft = parseInt(
+                    window.getComputedStyle(enemy).getPropertyValue("left")
+                );
+                if (enemyLeft < -100){
+                    enemy.parentElement.removeChild(enemy); 
+                    score++;
+                    document.getElementById("score").innerHTML = `Score: ${score}`;
+                }
+                enemy.style.left = enemyLeft + -20 + "px";
+
+                //check if the shark bite the player
+                var enemybound = enemy.getBoundingClientRect();
+                var playerbound = surfer.getBoundingClientRect();
+                var playertop = (playerbound.top + 60);
+                var playerbottom = (playerbound.bottom - 60);
+                //Condition to check whether the player's car and the other car are at the same position
+                if  ( 
+                        ((playerbound.right >= enemybound.left) && (playerbound.left <= enemybound.right)) &&
+                        ((playertop >= enemybound.top) && (playerbottom <= enemybound.bottom))
+                    )
+                    {
+                        isOver = true;
+                        clearInterval(moveEnemies);
+                        shark.style.background = "none";
+                        surfer.style.background = "url('./assets/game3/shark_GO.png') no-repeat";
+                        gameOver.style.background = "rgba(255, 255, 255, .5)"
+                        gameOver.style.display = "block";
+                    }
+
+            }
+        }
+    }, 200);
 }
 
 //Button Up actions
@@ -335,3 +380,4 @@ generateRocks();
 
 moverivalcar();
 moveAsteroid();
+moveShark();

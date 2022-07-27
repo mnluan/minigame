@@ -5,8 +5,9 @@ var idgame = params.get('id');
 
 //function to show games by id
 function gameConfig(){
-    if (idgame == "game_1"){
-        document.getElementById('board').innerHTML = '' +
+    switch(idgame){
+        case 'game_1':
+            document.getElementById('board').innerHTML = '' +
             '<div class="over"></div>' +
             '<div class="line"></div>' +
             '<div class="side"></div>' +
@@ -21,53 +22,59 @@ function gameConfig(){
 
             player.style.background = "url('./assets/game1/player.png')";
             rival.style.background = "url('./assets/game1/rival.png')";
-    }
+        break;
 
-    if(idgame == "game_2"){
-        document.getElementById('board').innerHTML ='<div id="score"></div>'+
-        '<div class="player" id="player"></div>'+
-        '<div class="asteroid" id="asteroid"></div>'+
-        '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
+        case 'game_2':
+            document.getElementById('board').innerHTML ='<div id="score"></div>'+
+            '<div class="player" id="player"></div>'+
+            '<div class="asteroid" id="asteroid"></div>'+
+            '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
 
-        asteroid.style.background = "url('./assets/game2/rival.gif') no-repeat";
-        player.style.background = "url('./assets/game2/player.gif') no-repeat";
-        board.style.background = "url('./assets/game2/background.png')";
-    }
+            asteroid.style.background = "url('./assets/game2/rival.gif') no-repeat";
+            player.style.background = "url('./assets/game2/player.gif') no-repeat";
+            board.style.background = "url('./assets/game2/background.png')";
+        break;
 
-    if(idgame == "game_3"){
-        document.getElementById('board').innerHTML ='<div id="score"></div>'+
-        '<div class="sea"></div>' +
-        '<div class="wave" id="wave"></div>'+
-        '<div class="surfer" id="surfer"></div>'+
-        '<div class="shark" id="shark"></div>'+
-        '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
-        
-        wave.style.background = "url('./assets/game3/wave.gif') no-repeat";
-        surfer.style.background = "url('./assets/game3/player.png') no-repeat";
-        shark.style.background = "url('./assets/game3/shark.png') no-repeat";
-        board.style.background = "orange";
-    }
+        case 'game_3':
+            document.getElementById('board').innerHTML ='<div id="score"></div>'+
+            '<div class="sea"></div>' +
+            '<div class="wave" id="wave"></div>'+
+            '<div class="surfer" id="surfer"></div>'+
+            '<div class="shark" id="shark"></div>'+
+            '<div id="gameOver"><div id="title">Game Over</div><p>Press Button <b>A</b> to Try Again</p></div>';
+            
+            wave.style.background = "url('./assets/game3/wave.gif') no-repeat";
+            surfer.style.background = "url('./assets/game3/player.png') no-repeat";
+            shark.style.background = "url('./assets/game3/shark.png') no-repeat";
+            board.style.background = "orange";
+        break;
 
-    if(idgame == "how_to_play"){
-        document.getElementById('board').innerHTML=''+
-        '<h2>Game 1:</h2>'+
-        '<p>To move the car, use the ArrowUp or ArrowDown [Buttons | Keyboard]</p>'+
-        '<h2>Game 2:</h2>'+
-        '<p>To move the starship, use the Up, Down, Left or Right Arrows [Buttons | Keyboard] <br>To attack the asteroids, press B [Button] or X [Keyboard]</p>'+
-        '<h2>Game 3:</h2>'+
-        '<p>To avoid the sharks, press A, B or ArrowUp [Buttons]<br>Or Space / ArrowUp [Keyboard]</p>'+
-        '';
-        document.getElementById('leftbuttons').innerHTML='';
-    }
+        case 'how_to_play':
+            document.getElementById('board').innerHTML=''+
+            '<h2>Game 1:</h2>'+
+            '<p>To move the car, use the ArrowUp or ArrowDown [Buttons | Keyboard]</p>'+
+            '<h2>Game 2:</h2>'+
+            '<p>To move the starship, use the Up, Down, Left or Right Arrows [Buttons | Keyboard] <br>To attack the asteroids, press B [Button] or X [Keyboard]</p>'+
+            '<h2>Game 3:</h2>'+
+            '<p>To avoid the sharks, press A, B or ArrowUp [Buttons]<br>Or Space / ArrowUp [Keyboard]</p>'+
+            '';
+            document.getElementById('leftbuttons').innerHTML='';
+        break;
 
-    if(idgame == "about"){
-        document.getElementById('board').innerHTML='<div id="about">'+
-        '<p>This project was developed by: </p>'+
-        '<h2> Luan Moraes do Nascimento </h2>'+
-        '<p>GitHub: <a href="https://github.com/mnluan" target="_blank">github.com/mnluan</a> </p>'+
-        '<p>LinkedIn: <a href="https://www.linkedin.com/in/mnluan/" target="_blank">linkedin.com/in/mnluan</a> </p>'+
-        '</div>';
-        document.getElementById('leftbuttons').innerHTML='';
+        case 'about':
+            document.getElementById('board').innerHTML='<div id="about">'+
+            '<p>This project was developed by: </p>'+
+            '<h2> Luan Moraes do Nascimento </h2>'+
+            '<p>GitHub: <a href="https://github.com/mnluan" target="_blank">github.com/mnluan</a> </p>'+
+            '<p>LinkedIn: <a href="https://www.linkedin.com/in/mnluan/" target="_blank">linkedin.com/in/mnluan</a> </p>'+
+            '</div>';
+            document.getElementById('leftbuttons').innerHTML='';
+        break;
+
+        default:
+            console.log('Error 404: page "'+ idgame +'" Not Found');
+            document.getElementById('board').innerHTML='<div id="about"><h1>404 :(<h1><h2>Sorry! Page not found <br> Press button &#x2630; to back to main menu</h2></div>'
+
     }
     
     document.getElementById("score").innerHTML = `Score: ${score}`;

@@ -3,6 +3,33 @@ body{
     margin: 0%;
 }
 
+.info{
+    display: none;
+    color: black;
+    font-size: 90px;
+    text-align: center;
+}
+
+.info .msn{
+    margin-top: 200px;
+    margin-right: 200px;
+}
+
+.info img{
+    width: 900px;
+}
+
+@media only screen and (orientation: portrait){
+    .info{
+        display: block;
+        background-color: #ffffff;
+        width: 2000px;
+        height: 2000px;
+        position:absolute;
+        z-index: 100;
+    }
+}
+
 .container {
     width: 100vw;
     height: 100vh;

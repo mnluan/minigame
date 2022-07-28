@@ -3,7 +3,7 @@
     "name": "MiniGame",
     "start_url": ".",
     "display": "standalone",
-    "theme_color": "#2f3dc2",
+    "theme_color": "#2f0b38",
     "background_color": "#2f0b38",
     "background-color": "#2f0b38",
     "description":"Minigames",

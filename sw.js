@@ -15,7 +15,8 @@ self.addEventListener('install', function(event){
 
                 './js',
                 './js/main.js',
-                './js/game.js'
+                './js/game.js',
+                './js/index.js'
             ]);
         })
     );

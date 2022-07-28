@@ -1,6 +1,6 @@
 {
-    "short_name": "pocketgame",
-    "name": "PocketGame",
+    "short_name": "minigame",
+    "name": "MiniGame",
     "start_url": ".",
     "display": "standalone",
     "theme_color": "#2f3dc2",

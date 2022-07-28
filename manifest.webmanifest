@@ -1,0 +1,15 @@
+{
+    "short_name": "pocketgame",
+    "name": "PocketGame",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#2f3dc2",
+    "background_color": "#2f0b38",
+    "background-color": "#2f0b38",
+    "description":"Minigames",
+    "icons":[{
+        "src": "./assets/info/logo.png",
+        "type": "image/png",
+        "sizes": "256x256"
+    }]
+}
